@@ -1,0 +1,83 @@
+html {
+    background-color: #61DBFB ;
+    padding: 0; 
+    margin: 0;
+    color: #61DBFB ;
+}
+
+* {
+    padding: 0;
+    margin: 0;   
+    font-family: "Rubik";
+}
+
+h1, h2, h3,h4,h5{
+    font-family: "Rubik";
+    font-weight: 500;
+    color: #F8FEFF;     
+}
+
+button {
+    background-color: #61DBFB;
+    border: none;
+    color: #F8FEFF;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+input {
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    background-color: #F8FEFF;
+    width: 220px;
+    margin: 20px 10px 0 0;
+    color: rgb(182, 182, 184);
+
+}
+
+
+ul {
+    margin-top: 20px;
+    border-top: 1px solid rgb(182, 182, 184, 0.721);
+    position: relative;
+}
+
+li {
+    list-style: none;
+    color: rgb(182, 182, 184);
+   border-bottom: 1px solid rgba(182, 182, 184, 0.721);
+   padding: 15px 0;
+   position: relative;
+   white-space: nowrap;
+   overflow: hidden;
+
+}
+
+.deleteBtn {
+    position: absolute;
+    right: 5px;
+    background-color: transparent;
+}
+
+.deleteBtn {
+    cursor: pointer;
+}
+
+.todo-container {
+    width: 600px; 
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: left;
+    background-color: #3A3F49;
+    padding: 30px 30px;
+    height: 100%;
+    min-height: 500px;
+    border-radius: 4px;
+    -webkit-box-shadow: 8px 5px 13px 1px rgba(0,0,0,0.33); 
+box-shadow: 8px 5px 13px 1px rgba(0,0,0,0.33);
+   
+}
+

@@ -1,4 +1,3 @@
-const serverUrl = '';
 const orderItems = {
     undefined: { label: 'Pick an item', imgUrl: './assets/question.jpg' },
     bottle: { label: 'Bottle', imgUrl: './assets/bottle.png' },
@@ -14,7 +13,7 @@ const errorMessages = {
 const submitButton = document.getElementById('confirm-button');
 const order = document.getElementById('order');
 const errorMsg = document.getElementById('error');
-const size = document.getElementById('sizing');
+const size = document.getElementById('size');
 const givenName = document.getElementById('givenName');
 const surname = document.getElementById('surname');
 const email = document.getElementById('email');
@@ -40,7 +39,6 @@ const handleToggleErrorMessage = (errorStatus) => {
 
 const handleSubmit = (event) => {
     event.preventDefault();
-
     submitButton.disabled = true;
 
     const data = {
@@ -48,7 +46,7 @@ const handleSubmit = (event) => {
         size: size.value,
         givenName: givenName.value,
         surname: surname.value,
-        email: email,
+        email: email.value,
         address: address.value,
         city: city.value,
         province: province.value,
@@ -56,7 +54,7 @@ const handleSubmit = (event) => {
         country: country.value
     };
 
-    fetch(`${serverUrl}/order`, {
+    fetch('/order', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -64,15 +62,15 @@ const handleSubmit = (event) => {
             "Content-Type": "application/json"
         }
     })
-    .then(res => res.json())
-    .then(data => {
-        const { status, error } = data;
-        if (status === 'success') {
-            window.location.href = '/order-confirmed';
-        } else if (data.error) {
-            submitButton.disabled = false;
-            errorMsg.style.display = 'flex';
-            errorMsg.innerText = error;
-        }
-    });
+        .then(res => res.json())
+        .then(data => {
+            const { status, error } = data;
+            if (status === 'success') {
+                window.location.href = '/order-confirmed';
+            } else if (error) {
+                submitButton.disabled = false;
+                errorMsg.style.display = 'flex';
+                errorMsg.innerText = errorMessages[error];
+            }
+        });
 }

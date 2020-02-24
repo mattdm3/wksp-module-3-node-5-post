@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Rubik:400,500,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="order-form/todo.css">
+    <title>To Do List</title>
+</head>
+
+<body>
+
+
+
+    <div class="todo-container">
+
+        <h1> Tasks for Today </h1>
+        <p> <%= inputs.length %> active tasks </p>
+
+        <form method="POST" action="/data">
+            <input placeholder="Enter a task..." type="text" name="input" maxlength="70">
+            <button class="add-btn" type="submit">Add Task</button>
+        </form>
+
+
+
+        <!-- <form action="/delete" method="GET"> -->
+        <ul>
+            <% inputs.forEach(input => { %>
+            <li class="list-item"> ☑️ <span> <%= input %> </span> <button class="deleteBtn" type="submit"
+                    onclick="deleteButton()" name="<%=input%>">🗑</button>
+            </li>
+
+            <%  }) %>
+        </ul>
+        <!-- </form> -->
+
+
+
+    </div>
+
+    <script src="order-form/todo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="order-form/styles.css">
+    <title>Order Confirmation</title>
+</head>
+
+<body>
+
+    <div class="centered-container-new p-2">
+
+        <h2 class="accent-color"> ✅ Order Successful!</h2>
+        <div class='confirmed-text'>
+            <div class="contact-info">
+                <h3>Billed To:</h3>
+                <p> <%= userInput.givenName%> <%= userInput.surname%></p>
+                <p> <%= userInput.address%>, <%= userInput.province%></p>
+            </div>
+
+            <div class="purchase-info">
+                <h3>Purchase item:</h3>
+                <% if (userInput.shirtSize !== "undefined") { %>
+                <p>
+                    1 <%= userInput.shirtSize%> shirt
+                </p>
+                <% }  else { %>
+                <p class="item">
+                    <%= userInput.item%>
+                </p>
+                <%} %>
+            </div>
+            <h2 class="primary-color"> Thank you for shopping with us!</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>
