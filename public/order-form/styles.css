@@ -223,3 +223,61 @@ h2 {
     color: red;
     font-size: 14px;
 }
+
+/* ADDED FOR CONFIRMATION PAGE */
+
+.centered-container-new {
+    
+        background-color: #f6f7fc;
+        box-shadow: 0 60px 120px rgba(71, 69, 123, 0.24), 0 15px 35px rgba(71, 69, 123, 0.24);
+        width: 400px;
+        height: 300px;
+        text-align: center;
+    
+}
+
+.centered-container-new h2 {
+    margin-bottom: 10px;
+}
+
+.primary-color {
+    color: rgb(70, 150, 70);
+}
+
+.accent-color {
+    color: rgb(181, 44, 44);
+}
+
+
+
+.p-1 {
+    padding: 20px; 
+}
+
+.p-2 {
+    padding: 40px; 
+}
+
+.confirmed-text{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    height: 90%;
+}
+
+.confirmed-text h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.item {
+    text-transform: capitalize;
+}
+
+.purchase-info h3, p {
+    padding: 0;
+    margin: 0;
+}
+
